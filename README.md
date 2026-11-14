@@ -1,0 +1,428 @@
+<div align="center">
+
+# CrabCode · 蟹码
+
+**不止 AI 编程,更是一个人的 AI 工作台 · Code × Work 双模式**<br>
+**More than AI coding — a one-person AI workspace · Code × Work dual mode**
+
+[![Latest Release](https://img.shields.io/github/v/release/acosmi/crabcode?display_name=tag&label=latest)](https://github.com/acosmi/crabcode/releases/latest)
+[![Platform](https://img.shields.io/badge/platform-macOS%20%7C%20Linux%20%7C%20Windows-blue)](#当前发布)
+[![Status](https://img.shields.io/badge/status-active-success)](https://github.com/acosmi/crabcode/releases)
+[![Issues](https://img.shields.io/github/issues/acosmi/crabcode?label=issues)](https://github.com/acosmi/crabcode/issues)
+
+[简体中文](#简体中文) · [English](#english)
+
+</div>
+
+---
+
+> ### 🎉 CrabCode 1.0.0 正式版上线 · Now Live
+> **新用户福利**：注册即享 **免费一个月 Basic 基础版会员**，赠送 **6000 万 Credits**，畅用 DeepSeek、Qwen3.7、MiniMax-M3、GLM-5.2 等国内主流模型，覆盖编码、对话、工具调用与深度思考全场景。<br>
+> **New users**: get a **free one-month Basic membership** with **60 million Credits** — powered by DeepSeek, Qwen3.7, MiniMax-M3, GLM-5.2 and more, across coding, chat, tool use, and deep thinking.
+
+---
+
+## 两种使用形态 · Two Editions
+
+CrabCode 提供两种使用形态，共享同一套账号、词元和能力。<br>
+CrabCode ships in two editions that share the same account, tokens, and capabilities.
+
+| 形态 · Edition | 说明 · Description | 获取 · Get it |
+|---|---|---|
+| 🖥️ **桌面 GUI 版**<br>Desktop GUI | 图形界面桌面应用，开箱即用，适合偏好可视化操作的用户。<br>A graphical desktop app, ready to use — ideal if you prefer a visual workflow. | **官网下载 · Official download**<br><https://acosmi.com/zh/downloads><br>Windows 也可从本仓库 [Releases](https://github.com/acosmi/crabcode/releases/latest) 下载<br>Windows users may also download from this repo's Releases |
+| ⌨️ **命令行 TUI 版**<br>Terminal TUI | 终端原生全屏体验，贴近工程目录，适合 CLI、远程和自动化场景。<br>A terminal-native fullscreen experience, close to your project directory — great for CLI, remote, and automation. | **GitHub 发布页 · GitHub Releases**<br>见下方安装说明 · see install steps below |
+
+> 本仓库（GitHub）的 Releases 提供命令行 TUI 版（全平台）和 **Windows 图形 GUI 版**安装包；macOS / Linux 的 GUI 版请前往官网下载页获取。<br>
+> This repository (GitHub) Releases host the terminal TUI packages (all platforms) and the **Windows GUI** installer; for the macOS / Linux GUI, use the official downloads page above.
+
+---
+
+## 新用户福利 · New User Offer
+
+> 新用户注册即享 **免费一个月 Basic 基础版会员**，赠送 **6000 万 Credits**，畅用 DeepSeek、Qwen3.7、MiniMax-M3、GLM-5.1 等国内主流模型，覆盖编码、对话、工具调用与深度思考全场景。
+>
+> New users enjoy a **free one-month Basic membership** with **60 million Credits**, powered by leading Chinese models — DeepSeek, Qwen3.7, MiniMax-M3, GLM-5.1 and more — across coding, chat, tool use, and deep thinking.
+
+- 注册 / Sign up: <https://acosmi.com/zh>
+- 注册后在 CrabCode 中执行 `/login` 即可激活会员与额度。
+- After signup, run `/login` inside CrabCode to activate your membership and Credits.
+- 老用户邀请新用户可额外获得奖励。
+- Existing users can earn bonus rewards by referring new users.
+
+---
+
+## 简体中文
+
+### 简介
+
+**CrabCode（蟹码）** 是一款运行在终端里的 AI 编程助手，把模型调用、代码检索、文件编辑、Shell 执行、MCP 工具和 GitHub 工作流收进同一套命令行体验。你无需离开当前工程目录，就能完成代码理解、排错、重构、测试生成与日常自动化。
+
+这个公开仓库用于发布命令行 TUI 版的稳定安装包和面向用户的说明。最新版本为 **v1.0.0 正式版**，发布于 **2026-06-21**。CrabCode 自 2025-12-12 公测首发，历经 21 个公测版本（0.1.0 → 0.9.1）打磨，今日发布 **1.0.0 正式版**：不止 AI 编程，更带来 **Code / Work 双工作模式** —— Code 写代码、Work 当管家办事情。如需图形界面桌面版（GUI），请前往官方下载页：<https://acosmi.com/zh/downloads>。
+
+### 当前发布
+
+| 平台 | 架构 | 发布包 |
+|---|---:|---|
+| macOS Apple Silicon | arm64 | `crabcode-1.0.0-darwin-arm64.tar.gz` |
+| macOS Intel | x64 | `crabcode-1.0.0-darwin-x64.tar.gz` |
+| Linux | arm64 | `crabcode-1.0.0-linux-arm64.tar.gz` |
+| Linux | x64 | `crabcode-1.0.0-linux-x64.tar.gz` |
+| Windows | x64 | `crabcode-1.0.0-win-x64.zip` |
+
+所有发布包都在 [Releases](https://github.com/acosmi/crabcode/releases/latest) 页面提供，并附带 SHA-256 校验文件。
+
+### 核心能力
+
+- **终端原生 TUI**：全屏交互、流式输出、历史会话、主题和中英文界面。
+- **模型动态路由**：可用模型、能力和价格由 Acosmi SDK 动态下发；在客户端内使用 `/model` 查看和切换。
+- **工程级工具**：读取、写入、精确编辑、全文检索、Glob 匹配、沙盒化 Shell、Notebook 读写。
+- **MCP 生态**：支持配置和调用 Model Context Protocol 服务器，包括浏览器自动化、外部数据源和自定义工具。
+- **工作流增强**：Hooks、Skills、Plan Mode、权限管理、Git / GitHub 协作、跨会话记忆。
+- **定时任务**：`crabcode cron` 使用独立 Rust 调度守护进程，支持 macOS、Linux 和 Windows。
+
+### 安装
+
+**macOS / Linux** — 一条命令完成安装（自动识别平台、SHA256 fail-closed 校验、自动配置 PATH）：
+
+```bash
+curl -fsSL https://updates.acosmi.com/crabcode/install.sh | sh
+```
+
+**Windows** — 在 **PowerShell** 中执行（不要粘贴进 CMD；正确提示符以 `PS ` 开头）：
+
+```powershell
+irm https://updates.acosmi.com/crabcode/install.ps1 | iex
+```
+
+说明：
+
+- 安装源为国内镜像（`updates.acosmi.com`），镜像不可达时自动回退 GitHub Releases；校验文件与产物**同源**，SHA256 校验 fail-closed（校验不过绝不落地）。
+- 海外用户也可以直接使用 GitHub 源，效果等价：
+
+```bash
+curl -fsSL https://github.com/acosmi/crabcode/releases/latest/download/install.sh | sh
+```
+
+- Windows 运行交互式 TUI 请使用 **Windows Terminal** 或新版 PowerShell 窗口，并从普通用户目录启动（例如 `C:\Users\you>`）。老式 CMD（尤其管理员窗口的 `C:\Windows\System32>`）可能出现界面不刷新或黑屏；若必须使用旧 CMD，先执行 `chcp 65001` 并关闭 legacy console 模式。
+- 手动安装（高级）：从 [Releases](https://github.com/acosmi/crabcode/releases/latest) 下载对应平台压缩包，解压后把目录加入 PATH 即可。注意安装目录需**整体保留**：不要只拷单个文件、也不要跨目录 symlink（程序依赖同目录下的运行时文件）。
+
+#### 更新
+
+已安装用户一条命令更新到最新版（只替换程序文件，不动配置、登录状态、历史与记忆数据）：
+
+```bash
+crabcode update
+```
+
+也可以在 TUI 内输入 `/update`，或重跑上面的安装命令（等价覆盖安装）。
+
+#### Windows 图形界面（GUI）版
+
+不想用命令行的 Windows 用户，可以直接下载图形界面安装包，无需配置 PATH：
+
+1. 打开 [最新 Release](https://github.com/acosmi/crabcode/releases/latest)，在 Assets 中下载 `crabcode-1.0.0-win-x64-setup.exe`。
+2. 双击运行安装向导，按提示完成；安装后从开始菜单启动 CrabCode 桌面版。
+
+直接下载链接：<https://github.com/acosmi/crabcode/releases/download/v1.0.0/crabcode-1.0.0-win-x64-setup.exe>
+
+> macOS / Linux 的图形界面版请前往官网下载页：<https://acosmi.com/zh/downloads>。
+
+### 校验文件完整性
+
+在已下载发布包的目录中执行：
+
+```bash
+curl -fsSL -O https://github.com/acosmi/crabcode/releases/download/v1.0.0/checksums-sha256.txt
+shasum -a 256 -c checksums-sha256.txt
+```
+
+Linux 也可以使用：
+
+```bash
+sha256sum -c checksums-sha256.txt
+```
+
+Windows 可下载 Windows 专用校验文件后对比：
+
+```powershell
+Invoke-WebRequest `
+  -Uri "https://github.com/acosmi/crabcode/releases/download/v1.0.0/checksums-sha256.txt" `
+  -OutFile checksums-sha256.txt
+
+$Expected = (Select-String -Path checksums-sha256.txt -Pattern "crabcode-1.0.0-win-x64.zip").Line.Split()[0].ToLower()
+$Actual = (Get-FileHash crabcode-1.0.0-win-x64.zip -Algorithm SHA256).Hash.ToLower()
+if ($Expected -ne $Actual) {
+  throw "SHA256 mismatch: expected $Expected, got $Actual"
+}
+"SHA256 OK: $Actual"
+```
+
+### 快速上手
+
+```bash
+crabcode               # 进入交互式 TUI
+crabcode -p "解释当前目录的代码结构"
+crabcode --help
+crabcode --version
+```
+
+第一次使用请在 TUI 中执行 `/login` 完成账号认证。
+
+常用命令：
+
+| 命令 | 用途 |
+|---|---|
+| `/login` | 登录或切换账号 |
+| `/model` | 查看和切换可用模型 |
+| `/clear` | 清空当前会话上下文 |
+| `/history` | 查看历史会话 |
+| `/permissions` | 查看或修改工具权限 |
+| `/help` | 打开帮助 |
+
+常用快捷键：
+
+| 操作 | 按键 |
+|---|---|
+| 切换思考档位 | `Tab` |
+| 中断当前任务 | `Esc` |
+| 翻阅历史 | `↑` / `↓` |
+| 滚动屏幕 | `PgUp` / `PgDn` 或鼠标滚轮 |
+| 退出 | 连续按两次 `Ctrl+C` |
+
+### 数据与隐私
+
+- 用户配置、认证状态、历史和本地记忆默认保存在 `~/.crabcode/`。
+- 工具执行默认受权限控制；文件和 Shell 操作需要按目录授权。
+- 模型请求经由 Acosmi 网关转发到上游模型服务；具体可用模型和额度以账号状态为准。
+
+### 故障排查：老 CPU 报「非法指令 / Illegal instruction」
+
+CrabCode 内置的 Bun 运行时默认要求 **AVX2** 指令集（Intel 第 4 代 Haswell，2013 年及以后）。更老的 x64 CPU（如第 1/2/3 代 i5）缺少 AVX2，启动时会崩溃并报 `Illegal instruction`、`非法指令` 或 `CPU lacks AVX support`。
+
+解决办法：改用 Bun 官方的 **baseline 构建**（只需 SSE4.2，支持更老的 x64 CPU；性能略低但可正常运行）。
+
+1. 下载对应平台的 baseline 包（版本号 `1.3.11` 为当前内置 Bun 版本，如不一致请换成对应版本）：
+
+   - Linux：`bun-linux-x64-baseline.zip`
+   - macOS：`bun-darwin-x64-baseline.zip`
+   - Windows：`bun-windows-x64-baseline.zip`
+
+   下载地址：<https://github.com/oven-sh/bun/releases/tag/bun-v1.3.11>
+
+2. 解压得到 `bun`（Windows 为 `bun.exe`），放到一个固定路径。
+
+3. 设置环境变量 `CRABCODE_BUN_BIN` 指向它，然后**重启 CrabCode**（GUI 需整个退出重开）：
+
+   macOS / Linux（写入 `~/.zshrc` 或 `~/.bashrc`，然后 `source` 或重开终端）：
+
+   ```bash
+   export CRABCODE_BUN_BIN="$HOME/path/to/bun"
+   ```
+
+   Windows（PowerShell，设用户级变量后重开终端）：
+
+   ```powershell
+   [Environment]::SetEnvironmentVariable("CRABCODE_BUN_BIN", "C:\path\to\bun.exe", "User")
+   ```
+
+> 说明：baseline 构建仍需 **SSE4.2**（约 2008 年后的 CPU）。更早的处理器 Bun 不支持，无法运行。
+
+### 反馈与支持
+
+- Bug / 建议: <https://github.com/acosmi/crabcode/issues>
+- 最新发布: <https://github.com/acosmi/crabcode/releases/latest>
+- 官方网站: <https://acosmi.com/zh>
+- 账号和词元问题：登录账户后台，或在 CrabCode 中执行 `/help`。
+
+---
+
+## English
+
+### Overview
+
+**CrabCode** is a terminal-native AI coding assistant that brings model access, code search, file editing, shell execution, MCP tools, and GitHub workflows into one command-line experience. Without leaving the project directory you are already in, you can understand code, debug, refactor, generate tests, and automate everyday engineering tasks.
+
+This public repository hosts the terminal TUI release packages and user-facing documentation. The latest release is **v1.0.0**, the first official release, published on **2026-06-21**. After a public beta that began on 2025-12-12 and 21 beta builds (0.1.0 → 0.9.1), CrabCode reaches **1.0.0** — more than AI coding, now with a **Code / Work dual mode**: Code for writing code, Work as a hands-on assistant. For the graphical desktop app (GUI), use the official downloads page: <https://acosmi.com/zh/downloads>.
+
+### Current Release
+
+| Platform | Architecture | Asset |
+|---|---:|---|
+| macOS Apple Silicon | arm64 | `crabcode-1.0.0-darwin-arm64.tar.gz` |
+| macOS Intel | x64 | `crabcode-1.0.0-darwin-x64.tar.gz` |
+| Linux | arm64 | `crabcode-1.0.0-linux-arm64.tar.gz` |
+| Linux | x64 | `crabcode-1.0.0-linux-x64.tar.gz` |
+| Windows | x64 | `crabcode-1.0.0-win-x64.zip` |
+
+All packages are available on the [latest release](https://github.com/acosmi/crabcode/releases/latest) page with SHA-256 checksum files.
+
+### Core Features
+
+- **Terminal-native TUI**: fullscreen interaction, streaming output, session history, themes, and English / Chinese UI.
+- **Dynamic model routing**: available models, capabilities, and pricing are provided dynamically by the Acosmi SDK; use `/model` in the client to inspect and switch.
+- **Engineering tools**: read, write, exact edit, full-text search, Glob matching, sandboxed Shell, and Notebook read/write.
+- **MCP ecosystem**: configure and call Model Context Protocol servers for browser automation, external data, and custom tools.
+- **Workflow support**: Hooks, Skills, Plan Mode, permissions, Git / GitHub collaboration, and cross-session memory.
+- **Scheduled tasks**: `crabcode cron` uses an independent Rust scheduler daemon on macOS, Linux, and Windows.
+
+### Installation
+
+**macOS / Linux** — one command (auto-detects platform, fail-closed SHA256 verification, sets up PATH automatically):
+
+```bash
+curl -fsSL https://updates.acosmi.com/crabcode/install.sh | sh
+```
+
+**Windows** — run in **PowerShell** (not CMD; the prompt should start with `PS `):
+
+```powershell
+irm https://updates.acosmi.com/crabcode/install.ps1 | iex
+```
+
+Notes:
+
+- The default source is our distribution mirror (`updates.acosmi.com`) with automatic fallback to GitHub Releases. Checksums are fetched from the **same source** as the artifact and verification is fail-closed.
+- You can also install straight from GitHub — fully equivalent:
+
+```bash
+curl -fsSL https://github.com/acosmi/crabcode/releases/latest/download/install.sh | sh
+```
+
+- On Windows, run the interactive TUI from **Windows Terminal** or a modern PowerShell window started in a regular user directory (e.g. `C:\Users\you>`). Legacy CMD windows (especially elevated `C:\Windows\System32>`) may show a frozen or black screen; if you must use legacy CMD, run `chcp 65001` first and disable legacy console mode.
+- Manual install (advanced): download the platform archive from [Releases](https://github.com/acosmi/crabcode/releases/latest), extract it, and add the directory to PATH. Keep the directory **intact** — do not copy out a single file or symlink across directories (the app relies on runtime files in the same directory).
+
+#### Update
+
+Already installed? One command updates to the latest version (replaces program files only — your config, login state, history and memory data are untouched):
+
+```bash
+crabcode update
+```
+
+You can also type `/update` inside the TUI, or simply re-run the install one-liner above.
+
+#### Windows GUI Edition
+
+Windows users who prefer a graphical app can download the installer directly — no command line or PATH setup needed:
+
+1. Open the [latest release](https://github.com/acosmi/crabcode/releases/latest) and download `crabcode-1.0.0-win-x64-setup.exe` from Assets.
+2. Double-click the installer and follow the wizard; launch CrabCode from the Start menu afterwards.
+
+Direct download: <https://github.com/acosmi/crabcode/releases/download/v1.0.0/crabcode-1.0.0-win-x64-setup.exe>
+
+> For the macOS / Linux GUI, use the official downloads page: <https://acosmi.com/zh/downloads>.
+
+### Verify File Integrity
+
+Run this in the directory where you downloaded the release packages:
+
+```bash
+curl -fsSL -O https://github.com/acosmi/crabcode/releases/download/v1.0.0/checksums-sha256.txt
+shasum -a 256 -c checksums-sha256.txt
+```
+
+On Linux you can also use:
+
+```bash
+sha256sum -c checksums-sha256.txt
+```
+
+For Windows:
+
+```powershell
+Invoke-WebRequest `
+  -Uri "https://github.com/acosmi/crabcode/releases/download/v1.0.0/checksums-sha256.txt" `
+  -OutFile checksums-sha256.txt
+
+$Expected = (Select-String -Path checksums-sha256.txt -Pattern "crabcode-1.0.0-win-x64.zip").Line.Split()[0].ToLower()
+$Actual = (Get-FileHash crabcode-1.0.0-win-x64.zip -Algorithm SHA256).Hash.ToLower()
+if ($Expected -ne $Actual) {
+  throw "SHA256 mismatch: expected $Expected, got $Actual"
+}
+"SHA256 OK: $Actual"
+```
+
+### Quick Start
+
+```bash
+crabcode               # Interactive TUI
+crabcode -p "Explain this repository"
+crabcode --help
+crabcode --version
+```
+
+On first use, run `/login` inside the TUI to authenticate your account.
+
+Common slash commands:
+
+| Command | Purpose |
+|---|---|
+| `/login` | Sign in or switch account |
+| `/model` | Inspect and switch available models |
+| `/clear` | Clear current session context |
+| `/history` | View past sessions |
+| `/permissions` | View or change tool permissions |
+| `/help` | Open help |
+
+Common shortcuts:
+
+| Action | Key |
+|---|---|
+| Cycle thinking level | `Tab` |
+| Interrupt current task | `Esc` |
+| History up/down | `↑` / `↓` |
+| Scroll screen | `PgUp` / `PgDn` or mouse wheel |
+| Quit | `Ctrl+C` twice |
+
+### Data & Privacy
+
+- User configuration, auth state, history, and local memory are stored under `~/.crabcode/` by default.
+- Tool execution is permission-gated by default; file and Shell access are authorized per directory.
+- Model requests are routed through the Acosmi gateway to upstream model services; available models and quota depend on account status.
+
+### Troubleshooting: "Illegal instruction" on older CPUs
+
+CrabCode's bundled Bun runtime requires **AVX2** by default (Intel Haswell / 4th-gen, 2013 and later). Older x64 CPUs without AVX2 (such as 1st/2nd/3rd-gen i5) crash on startup with `Illegal instruction` or `CPU lacks AVX support`.
+
+Fix: switch to Bun's official **baseline build** (needs only SSE4.2; slightly slower but runs on older x64 CPUs).
+
+1. Download the baseline package for your platform (version `1.3.11` is the currently bundled Bun; change it if yours differs):
+
+   - Linux: `bun-linux-x64-baseline.zip`
+   - macOS: `bun-darwin-x64-baseline.zip`
+   - Windows: `bun-windows-x64-baseline.zip`
+
+   From: <https://github.com/oven-sh/bun/releases/tag/bun-v1.3.11>
+
+2. Extract `bun` (`bun.exe` on Windows) to a fixed path.
+
+3. Set the `CRABCODE_BUN_BIN` environment variable to point at it, then **restart CrabCode** (fully quit and reopen the GUI):
+
+   macOS / Linux (add to `~/.zshrc` or `~/.bashrc`, then `source` it or reopen the terminal):
+
+   ```bash
+   export CRABCODE_BUN_BIN="$HOME/path/to/bun"
+   ```
+
+   Windows (PowerShell; set a user-level variable, then reopen the terminal):
+
+   ```powershell
+   [Environment]::SetEnvironmentVariable("CRABCODE_BUN_BIN", "C:\path\to\bun.exe", "User")
+   ```
+
+> Note: the baseline build still requires **SSE4.2** (CPUs from ~2008 onward). Bun does not support older processors.
+
+### Feedback & Support
+
+- Bugs / suggestions: <https://github.com/acosmi/crabcode/issues>
+- Latest release: <https://github.com/acosmi/crabcode/releases/latest>
+- Official site: <https://acosmi.com/zh>
+- Account and token issues: use your account dashboard, or run `/help` inside CrabCode.
+
+---
+
+<div align="center">
+
+**CrabCode · Crafted by Acosmi · 2026**
+
+</div>
