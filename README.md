@@ -1,3 +1,5 @@
+> **仓库说明**：本仓库是 wrok Code 的新名称发版仓，已复制 `v1.1.32` 全量发布资产（31 件，字节与旧仓一致）。旧名称仓库 [`acosmi/crabcode`](https://github.com/acosmi/crabcode) 保留用于兼容；在发版链路正式接入本仓前，两仓的后续版本可能不同步。
+
 <div align="center">
 
 # CrabCode · 蟹码
